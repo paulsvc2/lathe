@@ -2,9 +2,9 @@
 # This file will not be overwritten when you run PNCconf again
 
 net handwheel-x axis.x.jog-counts <= hm2_7i96s.0.7i73.0.0.enc0.count
-setp axis.0.jog-enable 1
-#setp axis.0.jog-scale 0.01
+setp axis.x.jog-enable 1
+setp axis.x.jog-scale 0.01
 
-#net handwheel-z axis.z.jog-counts <= hm2_7i96s.0.7i73.0.1.enc1.count
-#setp axis.1.jog-enable 1
-#setp axis.1.jog-scale 0.01
+net handwheel-z axis.z.jog-counts <= hm2_7i96s.0.7i73.0.0.enc1.count
+setp axis.z.jog-enable 1
+setp axis.z.jog-scale 0.01
