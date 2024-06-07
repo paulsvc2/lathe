@@ -1,0 +1,219 @@
+Error report created by /usr/lib/tcltk/linuxcnc/show_errors.tcl:
+
+Print file information:
+RUN_IN_PLACE=no
+LINUXCNC_DIR=
+LINUXCNC_BIN_DIR=/usr/bin
+LINUXCNC_TCL_DIR=/usr/lib/tcltk/linuxcnc
+LINUXCNC_SCRIPT_DIR=
+LINUXCNC_RTLIB_DIR=/usr/lib/linuxcnc/modules
+LINUXCNC_CONFIG_DIR=
+LINUXCNC_LANG_DIR=/usr/lib/tcltk/linuxcnc/msgs
+INIVAR=inivar
+HALCMD=halcmd
+LINUXCNC_EMCSH=/usr/bin/wish8.6
+LINUXCNC - 2.9.2
+Machine configuration directory is '/home/paul/linuxcnc/configs/lathe'
+Machine configuration file is 'lathe.ini'
+INIFILE=/home/paul/linuxcnc/configs/lathe/lathe.ini
+VERSION=1.1
+PARAMETER_FILE=linuxcnc.var
+TPMOD=
+HOMEMOD=
+TASK=milltask
+HALUI=halui
+DISPLAY=axis
+COORDINATES=XZ
+KINEMATICS=trivkins coordinates=XZ
+Starting LinuxCNC...
+Starting LinuxCNC server program: linuxcncsvr
+Loading Real Time OS, RTAPI, and HAL_LIB modules
+Starting LinuxCNC IO program: io
+Starting HAL User Interface program: halui
+linuxcnc TPMOD=tpmod HOMEMOD=homemod EMCMOT=motmod
+Found file(REL): ./lathe.hal
+hm2: loading Mesa HostMot2 driver version 0.15
+hm2_eth: loading Mesa AnyIO HostMot2 ethernet driver version 0.2
+hm2_eth: 10.10.10.10: INFO: Hardware address (MAC): 00:60:1b:16:87:f7
+hm2_eth: discovered 7I96S
+hm2/hm2_7i96s.0: Low Level init 0.15
+hm2/hm2_7i96s.0: Smart Serial Firmware Version 43
+Board hm2_7i96s.0.7i73.0.0 Hardware Mode 0 = nokeyboardnodisplay
+Board hm2_7i96s.0.7i73.0.0 Software Mode 0 = inputoutputencoder
+Board hm2_7i96s.0.7i73.0.0 Software Mode 1 = inputoutputencoderanalog
+Board hm2_7i96s.0.7i73.0.0 Software Mode 2 = inputoutputencoderanalog
+Board hm2_7i96s.0.7i73.0.0 Hardware Mode 1 = nokeyboarddisplay
+Board hm2_7i96s.0.7i73.0.0 Software Mode 0 = inputoutputencoderdisplay
+Board hm2_7i96s.0.7i73.0.0 Software Mode 1 = inputoutputencoderanalogdisplay
+Board hm2_7i96s.0.7i73.0.0 Software Mode 2 = inputoutputencoderanalogwidedisplay
+Board hm2_7i96s.0.7i73.0.0 Hardware Mode 2 = keyboard4by8nodisplay
+Board hm2_7i96s.0.7i73.0.0 Software Mode 0 = inputoutputencoderkeycode4by8
+Board hm2_7i96s.0.7i73.0.0 Software Mode 1 = inputoutputencoderanalogkeycode4by8
+Board hm2_7i96s.0.7i73.0.0 Software Mode 2 = inputoutputencoderanalogkeycode4by8
+Board hm2_7i96s.0.7i73.0.0 Hardware Mode 3 = keyboard4by8display
+Board hm2_7i96s.0.7i73.0.0 Software Mode 0 = inputoutputencoderdisplaykeycode4by8
+Board hm2_7i96s.0.7i73.0.0 Software Mode 1 = inputoutputencoderanalogdisplaykeycode4by8
+Board hm2_7i96s.0.7i73.0.0 Software Mode 2 = inputoutputencoderanalogwidedisplaykeycode4by8
+Board hm2_7i96s.0.7i73.0.0 Hardware Mode 4 = keyboard8by8nodisplay
+Board hm2_7i96s.0.7i73.0.0 Software Mode 0 = inputoutputencoderkeycode8by8
+Board hm2_7i96s.0.7i73.0.0 Software Mode 1 = inputoutputencoderanalogkeycode8by8
+Board hm2_7i96s.0.7i73.0.0 Software Mode 2 = inputoutputencoderanalogkeycode8by8
+Board hm2_7i96s.0.7i73.0.0 Hardware Mode 5 = keyboard8by8display
+Board hm2_7i96s.0.7i73.0.0 Software Mode 0 = inputoutputencoderdisplaykeycode8by8
+Board hm2_7i96s.0.7i73.0.0 Software Mode 1 = inputoutputencoderanalogdisplaykeycode8by8
+Board hm2_7i96s.0.7i73.0.0 Software Mode 2 = inputoutputencoderanalogwidedisplaykeycode8by8
+hm2/hm2_7i96s.0: 51 I/O Pins used:
+hm2/hm2_7i96s.0:     IO Pin 000 (TB3-01): InM Input Module #0, pin in0 (Input)
+hm2/hm2_7i96s.0:     IO Pin 001 (TB3-02): InM Input Module #0, pin in1 (Input)
+hm2/hm2_7i96s.0:     IO Pin 002 (TB3-03): InM Input Module #0, pin in2 (Input)
+hm2/hm2_7i96s.0:     IO Pin 003 (TB3-04): InM Input Module #0, pin in3 (Input)
+hm2/hm2_7i96s.0:     IO Pin 004 (TB3-05): InM Input Module #0, pin in4 (Input)
+hm2/hm2_7i96s.0:     IO Pin 005 (TB3-06): InM Input Module #0, pin in5 (Input)
+hm2/hm2_7i96s.0:     IO Pin 006 (TB3-07): InM Input Module #0, pin in6 (Input)
+hm2/hm2_7i96s.0:     IO Pin 007 (TB3-08): InM Input Module #0, pin in7 (Input)
+hm2/hm2_7i96s.0:     IO Pin 008 (TB3-09): InM Input Module #0, pin in8 (Input)
+hm2/hm2_7i96s.0:     IO Pin 009 (TB3-10): InM Input Module #0, pin in9 (Input)
+hm2/hm2_7i96s.0:     IO Pin 010 (TB3-11): InM Input Module #0, pin in10 (Input)
+hm2/hm2_7i96s.0:     IO Pin 011 (TB3-13/TB3-14): SSR #0, pin Out-00 (Output)
+hm2/hm2_7i96s.0:     IO Pin 012 (TB3-15/TB3-16): SSR #0, pin Out-01 (Output)
+hm2/hm2_7i96s.0:     IO Pin 013 (TB3-17/TB3-18): SSR #0, pin Out-02 (Output)
+hm2/hm2_7i96s.0:     IO Pin 014 (TB3-19/TB3-20): SSR #0, pin Out-03 (Output)
+hm2/hm2_7i96s.0:     IO Pin 015 (TB3-21/TB3-22): OutM Output Module #0, pin Out-04 (Output)
+hm2/hm2_7i96s.0:     IO Pin 016 (TB3-23/TB3-24): OutM Output Module #0, pin Out-05 (Output)
+hm2/hm2_7i96s.0:     IO Pin 017 (TB1-02/TB1-03): StepGen #0, pin Step (Output)
+hm2/hm2_7i96s.0:     IO Pin 018 (TB1-04/TB1-05): StepGen #0, pin Direction (Output)
+hm2/hm2_7i96s.0:     IO Pin 019 (TB1-08/TB1-09): StepGen #1, pin Step (Output)
+hm2/hm2_7i96s.0:     IO Pin 020 (TB1-10/TB1-11): StepGen #1, pin Direction (Output)
+hm2/hm2_7i96s.0:     IO Pin 021 (TB1-14/TB1-15): IOPort
+hm2/hm2_7i96s.0:     IO Pin 022 (TB1-16/TB1-17): IOPort
+hm2/hm2_7i96s.0:     IO Pin 023 (TB1-20/TB1-21): IOPort
+hm2/hm2_7i96s.0:     IO Pin 024 (TB1-22-TB1-23): IOPort
+hm2/hm2_7i96s.0:     IO Pin 025Found file(REL): ./custom.hal
+Shutting down and cleaning up LinuxCNC...
+Running HAL shutdown script
+ (TB2-02/TB2-03): IOPort
+hm2/hm2_7i96s.0:     IO Pin 026 (TB2-04/TB2-05): IOPort
+hm2/hm2_7i96s.0:     IO Pin 027 (TB2-07/TB2-08): Encoder #0, pin A (Input)
+hm2/hm2_7i96s.0:     IO Pin 028 (TB2-10/TB2-11): Encoder #0, pin B (Input)
+hm2/hm2_7i96s.0:     IO Pin 029 (TB2-13/TB2-14): Encoder #0, pin Index (Input)
+hm2/hm2_7i96s.0:     IO Pin 030 (TB2-16/TB2-17): Smart Serial Interface #0, pin rx0 (Input)
+hm2/hm2_7i96s.0:     IO Pin 031 (TB2-18/TB2-19): Smart Serial Interface #0, pin tx0 (Output)
+hm2/hm2_7i96s.0:     IO Pin 032 (internal): Smart Serial Interface #0, pin txen0 (Output)
+hm2/hm2_7i96s.0:     IO Pin 033 (internal): SSR #0, pin AC Ref (internal) (Output)
+hm2/hm2_7i96s.0:     IO Pin 034 (P1-01/DB25-01): IOPort
+hm2/hm2_7i96s.0:     IO Pin 035 (P1-02/DB25-14): IOPort
+hm2/hm2_7i96s.0:     IO Pin 036 (P1-03/DB25-02): IOPort
+hm2/hm2_7i96s.0:     IO Pin 037 (P1-04/DB25-15): IOPort
+hm2/hm2_7i96s.0:     IO Pin 038 (P1-05/DB25-03): IOPort
+hm2/hm2_7i96s.0:     IO Pin 039 (P1-06/DB25-16): IOPort
+hm2/hm2_7i96s.0:     IO Pin 040 (P1-07/DB25-04): IOPort
+hm2/hm2_7i96s.0:     IO Pin 041 (P1-08/DB25-17): IOPort
+hm2/hm2_7i96s.0:     IO Pin 042 (P1-09/DB25-05): IOPort
+hm2/hm2_7i96s.0:     IO Pin 043 (P1-11/DB25-06): IOPort
+hm2/hm2_7i96s.0:     IO Pin 044 (P1-13/DB25-07): IOPort
+hm2/hm2_7i96s.0:     IO Pin 045 (P1-15/DB25-08): IOPort
+hm2/hm2_7i96s.0:     IO Pin 046 (P1-17/DB25-09): IOPort
+hm2/hm2_7i96s.0:     IO Pin 047 (P1-19/DB25-10): IOPort
+hm2/hm2_7i96s.0:     IO Pin 048 (P1-21/DB25-11): IOPort
+hm2/hm2_7i96s.0:     IO Pin 049 (P1-23/DB25-12): IOPort
+hm2/hm2_7i96s.0:     IO Pin 050 (P1-25/DB25-13): IOPort
+hm2/hm2_7i96s.0: registered
+hm2_eth: in hm2_eth_reset
+hm2_eth: HostMot2 ethernet driver unloaded
+hm2: unloading
+Removing HAL_LIB, RTAPI, and Real Time OS modules
+Removing NML shared memory segments
+
+Debug file information:
+Note: Using POSIX realtime
+Waiting for component 'hm2_eth' to become ready.
+./custom.hal:5: parameter or pin 'axis.0.jog-enable' not found
+1331
+Stopping realtime threads
+Unloading hal components
+Note: Using POSIX realtime
+
+
+
+-----------------------------------------------------------------------
+Info report created by linuxcnc_info:
+The file:    /tmp/linuxcnc_info.txt
+can be posted to a forum or a web site like:
+     http://pastebin.com
+in order to provide information about the linuxcnc
+system and configuration.
+
+                Date: Fri 7 Jun 20:36:09 BST 2024
+            UTC Date: Fri 7 Jun 19:36:09 UTC 2024
+        this program: /usr/bin/linuxcnc_info
+              uptime: 20:36:09 up 1 min, 1 user, load average: 0.96, 0.39, 0.14
+     lsb_release -sa: Debian Debian GNU/Linux 12 (bookworm) 12 bookworm
+            linuxcnc: /usr/bin/linuxcnc
+                 pwd: /home/paul/linuxcnc/configs/lathe
+                USER: paul
+             LOGNAME: paul
+                HOME: /home/paul
+              EDITOR: 
+              VISUAL: 
+            LANGUAGE: en_GB:en
+                TERM: dumb
+           COLORTERM: 
+             DISPLAY: :0.0
+             DESKTOP: lightdm-xsession
+        display size: 1920x1080 pixels (508x285 millimeters)
+                PATH: /usr/bin:/home/paul/linuxcnc/configs/lathe/bin:/usr/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
+
+uname items:
+         nodename -n: linuxcnc
+      kernel-name -s: Linux
+      kernel-vers -v: #1 SMP PREEMPT_RT Debian 6.1.76-1 (2024-02-01)
+          machine -m: x86_64
+        processor -p: unknown
+         platform -i: unknown
+      oper system -o: GNU/Linux
+
+/proc items:
+             cmdline: BOOT_IMAGE=/boot/vmlinuz-6.1.0-18-rt-amd64 root=UUID=246e1be0-2d95-4893-9f6b-a5bf23681b45 ro quiet
+          model name: Intel(R) Core(TM) i5-3470 CPU @ 3.20GHz
+               cores: 4
+             cpu MHz: 3441.748
+             parport: 
+              serial: 0000-0000 : serial 0000-0000 : serial
+
+Versions:
+                 gcc: gcc (Debian 12.2.0-14) 12.2.0
+              python: Python 3.11.2
+                 git: not_in_PATH
+          git commit: NA
+                 tcl: 8.6
+                  tk: 8.6
+               glade: not_in_PATH
+
+linuxcnc_var all:
+
+     LINUXCNCVERSION: 2.9.2
+LINUXCNC_AUX_GLADEVCP: /usr/share/linuxcnc/aux_gladevcp
+LINUXCNC_AUX_EXAMPLES: /usr/share/linuxcnc/aux_examples
+            REALTIME: /usr/lib/linuxcnc/realtime
+                 RTS: uspace
+          HALLIB_DIR: /usr/share/linuxcnc/hallib
+              PYTHON: /usr/bin/python3
+
+dpkg -l '*linuxcnc*':
+Desired=Unknown/Install/Remove/Purge/Hold
+| Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend
+|/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad)
+||/ Name                Version      Architecture Description
++++-===================-============-============-=====================================================================
+un  linuxcnc            <none>       <none>       (no description available)
+un  linuxcnc-dev        <none>       <none>       (no description available)
+un  linuxcnc-doc        <none>       <none>       (no description available)
+ii  linuxcnc-doc-de     1:2.9.2      all          motion controller for CNC machines and robots (German documentation)
+ii  linuxcnc-doc-en     1:2.9.2      all          motion controller for CNC machines and robots (English documentation)
+ii  linuxcnc-doc-es     1:2.9.2      all          motion controller for CNC machines and robots (Spanish documentation)
+ii  linuxcnc-doc-fr     1:2.9.2      all          motion controller for CNC machines and robots (French documentation)
+un  linuxcnc-sim        <none>       <none>       (no description available)
+un  linuxcnc-sim-dev    <none>       <none>       (no description available)
+ii  linuxcnc-uspace     1:2.9.2      amd64        motion controller for CNC machines and robots
+ii  linuxcnc-uspace-dev 1:2.9.2      amd64        PC based motion controller for real-time Linux
+
