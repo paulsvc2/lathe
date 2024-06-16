@@ -16,8 +16,6 @@ set ::watchlist {
     pin+hm2_7i96s.0.7i73.0.0.enc0.index-enable
     pin+hm2_7i96s.0.7i73.0.0.enc0.position
     pin+hm2_7i96s.0.7i73.0.0.enc0.rawcounts
-    pin+joint.0.jog-enable
-    pin+joint.1.jog-enable
     pin+hm2_7i96s.0.7i73.0.0.input-16
     pin+hm2_7i96s.0.7i73.0.0.input-17
     pin+hm2_7i96s.0.7i73.0.0.input-18
@@ -40,6 +38,16 @@ set ::watchlist {
     pin+mux8.0.in6
     pin+mux8.0.in7
     pin+mux8.0.out
+    sig+mux4.0.pin0
+    sig+mux4.0.pin1
+    pin+mux4.0.in0
+    pin+mux4.0.in1
+    pin+mux4.0.in2
+    pin+mux4.0.in3
+    pin+mux4.0.out
+    pin+mux4.0.sel0
+    pin+mux4.0.sel1
+    sig+handwheel-scale
 }
 set ::workmode watchhal
 set ::watchInterval 100

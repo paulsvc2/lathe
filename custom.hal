@@ -2,28 +2,25 @@
 # This file will not be overwritten when you run PNCconf again
 
 net handwheel-x axis.x.jog-counts <= hm2_7i96s.0.7i73.0.0.enc0.count
-#setp axis.x.jog-enable 1
+setp axis.x.jog-enable 1
 #setp axis.x.jog-scale 0.01
 
 net handwheel-z axis.z.jog-counts <= hm2_7i96s.0.7i73.0.0.enc1.count
-#setp axis.z.jog-enable 1
+setp axis.z.jog-enable 1
 #setp axis.z.jog-scale 0.01
 
-net handwheel-enable axis.x.jog-enable <= hm2_7i96s.0.7i73.0.0.input-16-not
-net handwheel-enable axis.z.jog-enable <= hm2_7i96s.0.7i73.0.0.input-16-not
-
-
-
-#net handwheel-scale.in0 <= hm2_7i96s.0.7i73.0.0.input-17
-#setp handwheel-scale.in0 0.01
-#net handwheel-scale.in1 axis.x.jog-scale <= hm2_7i96s.0.7i73.0.0.input-18
-#net handwheel-scale.in2 axis.x.jog-scale <= hm2_7i96s.0.7i73.0.0.input-19
-
-loadrt mux8
-addf mux8.0 servo-thread
-net mux8.0.pin0 <= hm2_7i96s.0.7i73.0.0.input-17 mux8.0.sel0
-net mux8.0.pin1 <= hm2_7i96s.0.7i73.0.0.input-18 mux8.0.sel1
-net mux8.0.pin2 <= hm2_7i96s.0.7i73.0.0.input-19 mux8.0.sel2
-setp mux8.0.in0 0.01
-setp mux8.0.in1 0.10
-setp mux8.0.in2 1.00
+#Choix de l'increment
+loadrt mux4
+addf mux4.0 servo-thread
+#input 20 vers P1 pin15
+net mux4.0.pin0 mux4.0.sel0 <= hm2_7i96s.0.7i73.0.0.input-20
+#input 21 vers P1 pin16
+net mux4.0.pin1 mux4.0.sel1 <= hm2_7i96s.0.7i73.0.0.input-21
+#setup des increments
+setp mux4.0.in0 0.00
+setp mux4.0.in1 0.01
+setp mux4.0.in2 0.10
+setp mux4.0.in3 1.00
+#assignation de la valeur
+net handwheel-scale axis.x.jog-scale <= mux4.0.out
+net handwheel-scale axis.z.jog-scale <= mux4.0.out
