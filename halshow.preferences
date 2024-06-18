@@ -25,19 +25,6 @@ set ::watchlist {
     pin+hm2_7i96s.0.7i73.0.0.input-22
     pin+hm2_7i96s.0.7i73.0.0.input-23
     pin+hm2_7i96s.0.7i73.0.0.input-16-not
-    sig+handwheel-enable
-    pin+mux8.0.sel0
-    pin+mux8.0.sel1
-    pin+mux8.0.sel2
-    pin+mux8.0.in0
-    pin+mux8.0.in1
-    pin+mux8.0.in2
-    pin+mux8.0.in3
-    pin+mux8.0.in4
-    pin+mux8.0.in5
-    pin+mux8.0.in6
-    pin+mux8.0.in7
-    pin+mux8.0.out
     sig+mux4.0.pin0
     sig+mux4.0.pin1
     pin+mux4.0.in0
