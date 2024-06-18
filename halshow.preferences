@@ -35,6 +35,7 @@ set ::watchlist {
     pin+mux4.0.sel0
     pin+mux4.0.sel1
     sig+handwheel-scale
+    pin+hm2_7i96s.0.7i73.0.0.analogin0
 }
 set ::workmode watchhal
 set ::watchInterval 100
