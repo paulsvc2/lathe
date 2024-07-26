@@ -5,8 +5,6 @@ placeFrames 0.3
 set ::ratio 0.3
 set ::old_w_leftf 160
 set ::watchlist {
-    pin+hm2_7i96s.0.gpio.000.in_not
-    pin+hm2_7i96s.0.7i73.0.0.input-00
     pin+hm2_7i96s.0.7i73.0.0.enc0.count
     pin+hm2_7i96s.0.7i73.0.0.enc1.count
     pin+axis.x.jog-scale
@@ -36,6 +34,14 @@ set ::watchlist {
     pin+mux4.0.sel1
     sig+handwheel-scale
     pin+hm2_7i96s.0.7i73.0.0.analogin0
+    pin+hm2_7i96s.0.inm.00.input-00
+    pin+hm2_7i96s.0.outm.00.out-04
+    pin+hm2_7i96s.0.led.CR03
+    pin+hm2_7i96s.0.ssr.00.out-00
+    sig+estop-out
+    sig+estop-wireinput
+    pin+hm2_7i96s.0.inm.00.input-01
+    pin+hm2_7i96s.0.inm.00.input-01-not
 }
 set ::workmode watchhal
 set ::watchInterval 100

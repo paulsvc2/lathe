@@ -1,6 +1,11 @@
 # Include your custom HAL commands here
 # This file will not be overwritten when you run PNCconf again
 
+#estop
+net estop-wireinput <= hm2_7i96s.0.inm.00.input-00-not
+net estop-wireinput => halui.estop.activate
+net estop-out => hm2_7i96s.0.ssr.00.out-00
+
 net handwheel-x axis.x.jog-counts <= hm2_7i96s.0.7i73.0.0.enc0.count
 setp axis.x.jog-enable 1
 #setp axis.x.jog-scale 0.01
