@@ -145,8 +145,9 @@ net max-z     =>  joint.1.pos-lim-sw-in
 #*******************
 
 # ---setup spindle control signals---
-
+# setp hm2_7i96s.0.pwmgen.00.scale 2500
 setp   hm2_7i96s.0.pwmgen.00.scale [SPINDLE_0]MAX_OUTPUT
+# setp hm2_7i96s.0.pwmgen.00.output_type 1
 net spindle-vel-cmd-rpm     => hm2_7i96s.0.pwmgen.00.value
 net spindle-vel-cmd-rps        <=  spindle.0.speed-out-rps
 net spindle-vel-cmd-rps-abs    <=  spindle.0.speed-out-rps-abs
@@ -168,6 +169,11 @@ net spindle-index-enable      <=>  spindle.0.index-enable
 
 sets spindle-at-speed true
 
+# ---Setup spindle encoder---
+setp hm2_7i96s.0.encoder.00.scale 4000 
+# net spindle-position hm2_7i96s.0.encoder.00.position => motion.spindle-revs
+# net spindle-velocity hm2_7i96s.0.encoder.00.velocity => motion.spindle-speed-in
+# net spindle-index-enable hm2_7i96s.0.encoder.00.index-enable => motion.spindle-index-enable
 
 #******************************
 # connect miscellaneous signals
@@ -198,6 +204,7 @@ net MDI-mode              halui.mode.is-mdi
 
 net coolant-mist      <=  iocontrol.0.coolant-mist
 net coolant-flood     <=  iocontrol.0.coolant-flood
+net coolant-flood	  => hm2_7i96s.0.ssr.00.out-03
 
 #  ---probe signal---
 

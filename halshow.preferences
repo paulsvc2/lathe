@@ -42,6 +42,10 @@ set ::watchlist {
     sig+estop-wireinput
     pin+hm2_7i96s.0.inm.00.input-01
     pin+hm2_7i96s.0.inm.00.input-01-not
+    pin+hm2_7i96s.0.encoder.00.count
+    pin+hm2_7i96s.0.encoder.00.velocity-rpm
+    pin+hm2_7i96s.0.encoder.00.velocity
+    pin+hm2_7i96s.0.inm.00.input-02
 }
 set ::workmode watchhal
 set ::watchInterval 100
