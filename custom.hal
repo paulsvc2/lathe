@@ -1,12 +1,9 @@
 # Include your custom HAL commands here
 # This file will not be overwritten when you run PNCconf again
-loadrt message
-
-names=oillow
-messages="Low oil level Bijur Pump Spirax HD90 or Vectra #2"
+loadrt message names=oillow messages="Low oil level Bijur Pump Spirax HD90 or Vectra #2"
 addf oillow servo-thread
 
-setp oillow.edge 0
+setp oillow.edge 1
 net no-oil hm2_7i96s.0.inm.00.input-02 oillow.trigger
 
 #estop
