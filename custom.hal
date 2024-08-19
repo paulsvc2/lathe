@@ -11,13 +11,29 @@ net estop-wireinput <= hm2_7i96s.0.inm.00.input-00-not
 net estop-wireinput => halui.estop.activate
 net estop-out => hm2_7i96s.0.ssr.00.out-00
 
-net handwheel-x axis.x.jog-counts <= hm2_7i96s.0.7i73.0.0.enc0.count
-setp axis.x.jog-enable 1
-#setp axis.x.jog-scale 0.01
+loadrt ilowpass names=ilowpass.X,ilowpass.Z
+addf ilowpass.X servo-thread
+addf ilowpass.Z servo-thread
 
-net handwheel-z axis.z.jog-counts <= hm2_7i96s.0.7i73.0.0.enc1.count
+setp ilowpass.X.scale 1
+setp ilowpass.X.gain 0.01
+
+setp ilowpass.Z.scale 1
+setp ilowpass.Z.gain 0.01
+
+#net handwheel-x axis.x.jog-counts <= hm2_7i96s.0.7i73.0.0.enc1.count
+net handwheel-x ilowpass.X.in <= hm2_7i96s.0.7i73.0.0.enc1.count
+net encX-count <= ilowpass.X.out
+net encX-count axis.x.jog-counts
+setp axis.x.jog-enable 1
+setp axis.x.jog-scale 0.01
+
+#net handwheel-z axis.z.jog-counts <= hm2_7i96s.0.7i73.0.0.enc0.count
+net handwheel-z ilowpass.Z.in <= hm2_7i96s.0.7i73.0.0.enc0.count
+net encZ-count <= ilowpass.Z.out
+net encZ-count axis.z.jog-counts
 setp axis.z.jog-enable 1
-#setp axis.z.jog-scale 0.01
+setp axis.z.jog-scale 0.01
 
 #Choix de l'increment
 loadrt mux4
