@@ -1,5 +1,9 @@
 # Include your custom HAL commands here
 # This file will not be overwritten when you run PNCconf again
+
+#net MachineIsOn <= hm2_7i96s.0.outm.00.out-04
+#net MachineIsOn => halui.machine.is-on
+
 loadrt message names=oillow messages="Low oil level Bijur Pump Spirax HD90 or Vectra #2"
 addf oillow servo-thread
 
