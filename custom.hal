@@ -42,9 +42,9 @@ setp axis.z.jog-scale 0.01
 
 loadrt mux8 count=1
 addf mux8.0 servo-thread
-setp halui.spindle-override.count-enable true
-setp halui.spindle-override.direct-value true
-setp halui.spindle-override.scale 0.01
+setp halui.spindle.0.override.count-enable true
+setp halui.spindle.0.override.direct-value true
+setp halui.spindle.0.override.scale 0.01
 net mux8.0.pin0 mux8.0.sel0 <= hm2_7i96s.0.7i73.0.0.input-03
 net mux8.0.pin1 mux8.0.sel1 <= hm2_7i96s.0.7i73.0.0.input-04
 net mux8.0.pin2 mux8.0.sel2 <= hm2_7i96s.0.7i73.0.0.input-05
@@ -56,7 +56,7 @@ setp mux8.0.in4 90
 setp mux8.0.in5 100
 setp mux8.0.in6 110
 setp mux8.0.in7 120
-net feedoverrridebutton halui.spindle-override.counts <= mux8.0.out
+net feedoverrridebutton halui.spindle.0.override.counts <= mux8.0.out
  
 loadrt mux4 count=1 
 addf mux4.0 servo-thread  
