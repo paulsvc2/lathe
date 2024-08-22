@@ -32,26 +32,10 @@ set ::watchlist {
     pin+mux4.0.out
     pin+mux4.0.sel0
     pin+mux4.0.sel1
-    sig+handwheel-scale
-    pin+hm2_7i96s.0.7i73.0.0.analogin0
-    pin+hm2_7i96s.0.inm.00.input-00
     pin+hm2_7i96s.0.outm.00.out-04
     pin+hm2_7i96s.0.led.CR03
-    pin+hm2_7i96s.0.ssr.00.out-00
-    sig+estop-out
-    sig+estop-wireinput
-    pin+hm2_7i96s.0.inm.00.input-01
-    pin+hm2_7i96s.0.inm.00.input-01-not
-    pin+hm2_7i96s.0.encoder.00.count
-    pin+hm2_7i96s.0.encoder.00.velocity-rpm
-    pin+hm2_7i96s.0.encoder.00.velocity
-    pin+hm2_7i96s.0.inm.00.input-02
-    pin+hm2_7i96s.0.ssr.00.out-02
-    pin+hm2_7i96s.0.ssr.00.out-03
-    sig+MachineIsOn
-    pin+halui.machine.on
-    pin+halui.home-all
     pin+halui.machine.is-on
+    sig+machine-is-on
 }
 set ::workmode watchhal
 set ::watchInterval 100

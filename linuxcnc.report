@@ -127,12 +127,8 @@ Removing NML shared memory segments
 Debug file information:
 Note: Using POSIX realtime
 
-Message string for index 0 missing
-message: rtapi_app_main: Invalid argument (-22)
-./custom.hal:3: waitpid failed /usr/bin/rtapi_app message
-./custom.hal:3: /usr/bin/rtapi_app exited without becoming ready
-./custom.hal:3: insmod for message failed, returned -1
-1838
+./custom.hal:45: parameter or pin 'halui.spindle-override.count-enable' not found
+2953
 Stopping realtime threads
 Unloading hal components
 Note: Using POSIX realtime
@@ -147,10 +143,10 @@ can be posted to a forum or a web site like:
 in order to provide information about the linuxcnc
 system and configuration.
 
-                Date: Sun 4 Aug 15:02:46 BST 2024
-            UTC Date: Sun 4 Aug 14:02:46 UTC 2024
+                Date: Thu 22 Aug 10:59:42 BST 2024
+            UTC Date: Thu 22 Aug 09:59:42 UTC 2024
         this program: /usr/bin/linuxcnc_info
-              uptime: 15:02:46 up 28 min, 1 user, load average: 0.54, 0.53, 0.43
+              uptime: 10:59:42 up 32 min, 1 user, load average: 0.99, 0.71, 0.55
      lsb_release -sa: Debian Debian GNU/Linux 12 (bookworm) 12 bookworm
             linuxcnc: /usr/bin/linuxcnc
                  pwd: /home/paul/linuxcnc/configs/lathe
@@ -180,7 +176,7 @@ uname items:
              cmdline: BOOT_IMAGE=/boot/vmlinuz-6.1.0-18-rt-amd64 root=UUID=246e1be0-2d95-4893-9f6b-a5bf23681b45 ro quiet
           model name: Intel(R) Core(TM) i5-3470 CPU @ 3.20GHz
                cores: 4
-             cpu MHz: 3505.885
+             cpu MHz: 3475.580
              parport: 
               serial: 0000-0000 : serial 0000-0000 : serial
 

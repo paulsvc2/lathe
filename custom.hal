@@ -1,8 +1,7 @@
 # Include your custom HAL commands here
 # This file will not be overwritten when you run PNCconf again
 
-#net MachineIsOn <= hm2_7i96s.0.outm.00.out-04
-#net MachineIsOn => halui.machine.is-on
+net machine-is-on => hm2_7i96s.0.outm.00.out-04
 
 loadrt message names=oillow messages="Low oil level Bijur Pump Spirax HD90 or Vectra #2"
 addf oillow servo-thread
@@ -40,8 +39,27 @@ setp axis.z.jog-enable 1
 setp axis.z.jog-scale 0.01
 
 #Choix de l'increment
-loadrt mux4
-addf mux4.0 servo-thread
+
+loadrt mux8 count=1
+addf mux8.0 servo-thread
+setp halui.spindle-override.count-enable true
+setp halui.spindle-override.direct-value true
+setp halui.spindle-override.scale 0.01
+net mux8.0.pin0 mux8.0.sel0 <= hm2_7i96s.0.7i73.0.0.input-03
+net mux8.0.pin1 mux8.0.sel1 <= hm2_7i96s.0.7i73.0.0.input-04
+net mux8.0.pin2 mux8.0.sel2 <= hm2_7i96s.0.7i73.0.0.input-05
+setp mux8.0.in0 50
+setp mux8.0.in1 60
+setp mux8.0.in2 70
+setp mux8.0.in3 80
+setp mux8.0.in4 90
+setp mux8.0.in5 100
+setp mux8.0.in6 110
+setp mux8.0.in7 120
+net feedoverrridebutton halui.spindle-override.counts <= mux8.0.out
+ 
+loadrt mux4 count=1 
+addf mux4.0 servo-thread  
 #input 20 vers P1 pin15
 net mux4.0.pin0 mux4.0.sel0 <= hm2_7i96s.0.7i73.0.0.input-20
 #input 21 vers P1 pin16
@@ -54,3 +72,5 @@ setp mux4.0.in3 1.00
 #assignation de la valeur
 net handwheel-scale axis.x.jog-scale <= mux4.0.out
 net handwheel-scale axis.z.jog-scale <= mux4.0.out
+
+
