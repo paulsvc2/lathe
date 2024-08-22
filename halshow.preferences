@@ -1,6 +1,6 @@
 # Halshow settings
 # This file is generated automatically.
-wm geometry . 1214x877+661+106
+wm geometry . 749x790+58+95
 placeFrames 0.3
 set ::ratio 0.3
 set ::old_w_leftf 160
@@ -36,6 +36,11 @@ set ::watchlist {
     pin+hm2_7i96s.0.led.CR03
     pin+halui.machine.is-on
     sig+machine-is-on
+    pin+conv-float-s32.0.in
+    pin+conv-float-s32.0.out
+    pin+mux8.0.sel0
+    pin+mux8.0.sel1
+    pin+mux8.0.sel2
 }
 set ::workmode watchhal
 set ::watchInterval 100
