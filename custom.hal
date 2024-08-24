@@ -1,9 +1,13 @@
 # Include your custom HAL commands here
 # This file will not be overwritten when you run PNCconf again
 
+loadrt conv_float_s32 count=1
+loadrt message names=oillow messages="Low oil level Bijur Pump Spirax HD90 or Vectra #2"
+loadrt mux8 count=1
+loadrt mux4 count=1 
+
 net machine-is-on => hm2_7i96s.0.outm.00.out-04
 
-loadrt message names=oillow messages="Low oil level Bijur Pump Spirax HD90 or Vectra #2"
 addf oillow servo-thread
 
 setp oillow.edge 1
@@ -39,10 +43,8 @@ setp axis.z.jog-enable 1
 setp axis.z.jog-scale 0.01
 
 #Choix de l'increment
-loadrt conv_float_s32
 addf conv-float-s32.0 servo-thread
 
-loadrt mux8 count=1
 addf mux8.0 servo-thread
 setp halui.spindle.0.override.count-enable true
 setp halui.spindle.0.override.direct-value true
@@ -61,7 +63,6 @@ setp mux8.0.in7 120
 net mux80conv conv-float-s32.0.in <= mux8.0.out
 net feedoverrridebutton halui.spindle.0.override.counts <= conv-float-s32.0.out
  
-loadrt mux4 count=1 
 addf mux4.0 servo-thread  
 #input 20 vers P1 pin15
 net mux4.0.pin0 mux4.0.sel0 <= hm2_7i96s.0.7i73.0.0.input-20

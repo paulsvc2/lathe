@@ -5,45 +5,8 @@ placeFrames 0.3
 set ::ratio 0.3
 set ::old_w_leftf 160
 set ::watchlist {
-    pin+axis.x.jog-scale
-    pin+axis.x.jog-enable
-    pin+axis.z.jog-scale
-    pin+axis.z.jog-enable
-    pin+hm2_7i96s.0.7i73.0.0.enc0.index-enable
-    pin+hm2_7i96s.0.7i73.0.0.enc0.position
-    pin+hm2_7i96s.0.7i73.0.0.enc0.rawcounts
-    pin+hm2_7i96s.0.7i73.0.0.input-16
-    pin+hm2_7i96s.0.7i73.0.0.input-17
-    pin+hm2_7i96s.0.7i73.0.0.input-18
-    pin+hm2_7i96s.0.7i73.0.0.input-19
-    pin+hm2_7i96s.0.7i73.0.0.input-20
-    pin+hm2_7i96s.0.7i73.0.0.input-21
-    pin+hm2_7i96s.0.7i73.0.0.input-22
-    pin+hm2_7i96s.0.7i73.0.0.input-23
-    pin+hm2_7i96s.0.7i73.0.0.input-16-not
-    sig+mux4.0.pin0
-    sig+mux4.0.pin1
-    pin+mux4.0.in0
-    pin+mux4.0.in1
-    pin+mux4.0.in2
-    pin+mux4.0.in3
-    pin+mux4.0.out
-    pin+mux4.0.sel0
-    pin+mux4.0.sel1
-    pin+conv-float-s32.0.in
-    pin+conv-float-s32.0.out
-    pin+mux8.0.sel0
-    pin+mux8.0.sel1
-    pin+mux8.0.sel2
-    pin+hm2_7i96s.0.7i73.0.0.input-00
-    pin+hm2_7i96s.0.7i73.0.0.input-01
-    pin+hm2_7i96s.0.7i73.0.0.input-02
-    pin+hm2_7i96s.0.7i73.0.0.input-06
-    pin+hm2_7i96s.0.7i73.0.0.input-07
-    pin+hm2_7i96s.0.7i73.0.0.input-08
-    pin+hm2_7i96s.0.7i73.0.0.input-10
-    pin+hm2_7i96s.0.7i73.0.0.input-09
-    pin+hm2_7i96s.0.7i73.0.0.input-11
+    pin+hm2_7i96s.0.inm.00.input-01-not
+    pin+hm2_7i96s.0.inm.00.input-01
 }
 set ::workmode watchhal
 set ::watchInterval 100

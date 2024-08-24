@@ -34,8 +34,8 @@ setp [HMOT](CARD0).stepgen.timer-number 1
 net estop-ext     <=  [HMOT](CARD0).inm.00.input-00
 
 # --- MAX-Z ---
-net max-z     <=  [HMOT](CARD0).inm.00.input-01-not
-
+#net max-z     <=  hm2_7i96s.0.inm.00.input-01-not
+net home-z		<= hm2_7i96s.0.inm.00.input-01-not
 
 #*******************
 #  AXIS X JOINT 0
@@ -214,6 +214,7 @@ net coolantbutton <= hm2_7i96s.0.7i73.0.0.input-12-not toggle.0.in
 net coolantselect or2.0.in0 toggle.0.out 
 net coolant-halui or2.0.in1 <=  iocontrol.0.coolant-flood
 net coolant-flood or2.0.out
+
 
 #  ---probe signal---
 
