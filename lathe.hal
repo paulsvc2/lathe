@@ -7,6 +7,9 @@ loadrt [KINS]KINEMATICS
 loadrt [EMCMOT]EMCMOT servo_period_nsec=[EMCMOT]SERVO_PERIOD num_joints=[KINS]JOINTS
 loadrt hostmot2
 loadrt hm2_eth board_ip="10.10.10.10" config="num_encoders=1 num_pwmgens=1 num_stepgens=2 sserial_port_0=0xxxxxxx" 
+loadrt toggle count=1
+loadrt or2 count=1
+
 setp    [HMOT](CARD0).pwmgen.pwm_frequency 20000
 setp    [HMOT](CARD0).pwmgen.pdm_frequency 6000000
 setp    [HMOT](CARD0).watchdog.timeout_ns 5000000
@@ -201,10 +204,16 @@ net jog-speed             halui.axis.jog-speed
 net MDI-mode              halui.mode.is-mdi
 
 #  ---coolant signals---
+addf toggle.0 servo-thread
+addf or2.0 servo-thread
 
 net coolant-mist      <=  iocontrol.0.coolant-mist
-net coolant-flood     <=  iocontrol.0.coolant-flood
+#net coolant-flood     <=  iocontrol.0.coolant-flood
 net coolant-flood	  => hm2_7i96s.0.ssr.00.out-03
+net coolantbutton <= hm2_7i96s.0.7i73.0.0.input-12-not toggle.0.in
+net coolantselect or2.0.in0 toggle.0.out 
+net coolant-halui or2.0.in1 <=  iocontrol.0.coolant-flood
+net coolant-flood or2.0.out
 
 #  ---probe signal---
 

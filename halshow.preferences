@@ -1,12 +1,10 @@
 # Halshow settings
 # This file is generated automatically.
-wm geometry . 749x790+58+95
+wm geometry . 749x790+634+52
 placeFrames 0.3
 set ::ratio 0.3
 set ::old_w_leftf 160
 set ::watchlist {
-    pin+hm2_7i96s.0.7i73.0.0.enc0.count
-    pin+hm2_7i96s.0.7i73.0.0.enc1.count
     pin+axis.x.jog-scale
     pin+axis.x.jog-enable
     pin+axis.z.jog-scale
@@ -32,15 +30,20 @@ set ::watchlist {
     pin+mux4.0.out
     pin+mux4.0.sel0
     pin+mux4.0.sel1
-    pin+hm2_7i96s.0.outm.00.out-04
-    pin+hm2_7i96s.0.led.CR03
-    pin+halui.machine.is-on
-    sig+machine-is-on
     pin+conv-float-s32.0.in
     pin+conv-float-s32.0.out
     pin+mux8.0.sel0
     pin+mux8.0.sel1
     pin+mux8.0.sel2
+    pin+hm2_7i96s.0.7i73.0.0.input-00
+    pin+hm2_7i96s.0.7i73.0.0.input-01
+    pin+hm2_7i96s.0.7i73.0.0.input-02
+    pin+hm2_7i96s.0.7i73.0.0.input-06
+    pin+hm2_7i96s.0.7i73.0.0.input-07
+    pin+hm2_7i96s.0.7i73.0.0.input-08
+    pin+hm2_7i96s.0.7i73.0.0.input-10
+    pin+hm2_7i96s.0.7i73.0.0.input-09
+    pin+hm2_7i96s.0.7i73.0.0.input-11
 }
 set ::workmode watchhal
 set ::watchInterval 100
