@@ -35,7 +35,7 @@ net estop-ext     <=  [HMOT](CARD0).inm.00.input-00
 
 # --- MAX-Z ---
 #net max-z     <=  hm2_7i96s.0.inm.00.input-01-not
-net home-z		<= hm2_7i96s.0.inm.00.input-01-not
+#net home-z		<= hm2_7i96s.0.inm.00.input-01-not
 
 #*******************
 #  AXIS X JOINT 0
@@ -138,10 +138,11 @@ net z-enable     <= joint.1.amp-enable-out
 net z-enable     => [HMOT](CARD0).stepgen.01.enable
 
 # ---setup home / limit switch signals---
-
+net z-home-sw <= hm2_7i96s.0.inm.00.input-01-not
 net z-home-sw     =>  joint.1.home-sw-in
 net z-neg-limit     =>  joint.1.neg-lim-sw-in
-net max-z     =>  joint.1.pos-lim-sw-in
+#net max-z z-home-sw
+net max-z =>  joint.1.pos-lim-sw-in
 
 #*******************
 #  SPINDLE
