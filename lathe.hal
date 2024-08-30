@@ -10,7 +10,10 @@ loadrt hm2_eth board_ip="10.10.10.10" config="num_encoders=1 num_pwmgens=1 num_s
 loadrt toggle count=1
 loadrt or2 count=1
 loadrt debounce cfg=1
-
+loadrt near
+loadrt abs names=abs.spindle
+loadrt lowpass names=lowpass.spindle
+loadrt scale names=scale.spindle
 setp    [HMOT](CARD0).pwmgen.pwm_frequency 20000
 setp    [HMOT](CARD0).pwmgen.pdm_frequency 6000000
 setp    [HMOT](CARD0).watchdog.timeout_ns 5000000
@@ -22,6 +25,10 @@ addf motion-controller        servo-thread
 addf pid.x.do-pid-calcs       servo-thread
 addf pid.z.do-pid-calcs       servo-thread
 addf pid.s.do-pid-calcs       servo-thread
+addf abs.spindle              servo-thread
+addf lowpass.spindle          servo-thread
+addf near.0                   servo-thread
+
 addf [HMOT](CARD0).write         servo-thread
 setp [HMOT](CARD0).dpll.01.timer-us -50
 setp [HMOT](CARD0).stepgen.timer-number 1
@@ -156,6 +163,28 @@ net out-home-z =>	joint.1.pos-lim-sw-in
 #  SPINDLE
 #*******************
 
+setp   pid.s.Pgain     [SPINDLE_0]P
+setp   pid.s.Igain     [SPINDLE_0]I
+setp   pid.s.Dgain     [SPINDLE_0]D
+setp   pid.s.bias      [SPINDLE_0]BIAS
+setp   pid.s.FF0       [SPINDLE_0]FF0
+setp   pid.s.FF1       [SPINDLE_0]FF1
+setp   pid.s.FF2       [SPINDLE_0]FF2
+setp   pid.s.deadband  [SPINDLE_0]DEADBAND
+setp   pid.s.maxoutput [SPINDLE_0]MAX_OUTPUT
+setp   pid.s.error-previous-target true
+ 
+net spindle-index-enable  <=> pid.s.index-enable
+net spindle-enable        =>  pid.s.enable
+net spindle-vel-cmd-rpm-abs     => pid.s.command
+net spindle-vel-fb-rpm-abs      => pid.s.feedback
+net spindle-output        <=  pid.s.output
+    
+net spindle-revs             <=   hm2_7i96s.0.encoder.00.position
+net spindle-vel-fb-rps       <=   hm2_7i96s.0.encoder.00.velocity
+net spindle-vel-fb-rpm       <=   hm2_7i96s.0.encoder.00.velocity-rpm
+net spindle-index-enable     <=>  hm2_7i96s.0.encoder.00.index-enable
+    
 # ---setup spindle control signals---
 # setp hm2_7i96s.0.pwmgen.00.scale 2500
 setp   hm2_7i96s.0.pwmgen.00.scale [SPINDLE_0]MAX_OUTPUT
@@ -180,6 +209,17 @@ net spindle-index-enable      <=>  spindle.0.index-enable
 # ---Setup spindle at speed signals---
 
 sets spindle-at-speed true
+
+net spindle-vel-cmd-rps    =>  near.0.in1
+net spindle-vel-fb-rps         =>  near.0.in2
+net spindle-at-speed       <=  near.0.out
+setp near.0.scale 1.000000
+setp near.0.difference 1.666667
+ 
+setp lowpass.spindle.gain 1.000000
+net spindle-vel-fb-rpm => abs.spindle.in
+net spindle-vel-fb-rpm-abs abs.spindle.out => lowpass.spindle.in
+net spindle-fb-rpm-abs-filtered lowpass.spindle.out
 
 # ---Setup spindle encoder---
 setp hm2_7i96s.0.encoder.00.scale 4000 
