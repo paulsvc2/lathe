@@ -10,7 +10,7 @@ loadrt hm2_eth board_ip="10.10.10.10" config="num_encoders=1 num_pwmgens=1 num_s
 loadrt toggle count=1
 loadrt or2 count=1
 loadrt debounce cfg=1
-loadrt near
+loadrt near count=1
 loadrt abs names=abs.spindle
 loadrt lowpass names=lowpass.spindle
 loadrt scale names=scale.spindle
@@ -177,7 +177,7 @@ setp   pid.s.error-previous-target true
 net spindle-index-enable  <=> pid.s.index-enable
 net spindle-enable        =>  pid.s.enable
 net spindle-vel-cmd-rpm-abs     => pid.s.command
-net spindle-vel-fb-rpm-abs      => pid.s.feedback
+net spindle-vel-fb-rpm-abs-filtered      => pid.s.feedback
 net spindle-output        <=  pid.s.output
     
 net spindle-revs             <=   hm2_7i96s.0.encoder.00.position
