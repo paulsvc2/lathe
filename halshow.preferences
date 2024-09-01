@@ -1,17 +1,16 @@
 # Halshow settings
 # This file is generated automatically.
-wm geometry . 749x790+634+52
+wm geometry . 749x790+1161+31
 placeFrames 0.4531886024423338
 set ::ratio 0.4531886024423338
 set ::old_w_leftf 160
 set ::watchlist {
     pin+hm2_7i96s.0.inm.00.input-01-not
     pin+hm2_7i96s.0.inm.00.input-01
-    pin+spindle.0.speed-in
-    pin+spindle.0.speed-out-abs
-    pin+spindle.0.speed-out-rps
-    pin+spindle.0.speed-cmd-rps
-    sig+spindle-vel-fb-rpm
+    pin+pid.s.error
+    pin+pid.s.feedback
+    sig+spindle-vel-rpm-abs-filtered
+    sig+spindle-vel-fb-rpm-abs-filtered
 }
 set ::workmode watchhal
 set ::watchInterval 100
