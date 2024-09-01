@@ -68,4 +68,4 @@
 	radius.bo = False
 	chamfer.fo = False
 	groove.feed = 0.03
-# last update  by gladevcp.persistence.save_state() on Sun Sep  1 10:34:36 2024 
+# last update  by gladevcp.persistence.save_state() on Sun Sep  1 10:46:51 2024 
