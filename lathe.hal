@@ -219,7 +219,7 @@ setp near.0.difference 1.666667
 setp lowpass.spindle.gain 1.000000
 net spindle-vel-fb-rpm => abs.spindle.in
 net spindle-vel-fb-rpm-abs abs.spindle.out => lowpass.spindle.in
-net spindle-fb-rpm-abs-filtered lowpass.spindle.out
+net spindle-vel-rpm-abs-filtered lowpass.spindle.out
 
 # ---Setup spindle encoder---
 setp hm2_7i96s.0.encoder.00.scale 4000 
