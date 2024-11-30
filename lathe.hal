@@ -3,13 +3,14 @@
 # If you make changes to this file, they will be
 # overwritten when you run PNCconf again
 
+loadusr python3 /usr/bin/arduino-connector
 loadrt [KINS]KINEMATICS
 loadrt [EMCMOT]EMCMOT servo_period_nsec=[EMCMOT]SERVO_PERIOD num_joints=[KINS]JOINTS
 loadrt hostmot2
 loadrt hm2_eth board_ip="10.10.10.10" config="num_encoders=1 num_pwmgens=1 num_stepgens=2 sserial_port_0=0xxxxxxx" 
 loadrt toggle count=1
 loadrt or2 count=1
-loadrt debounce cfg=1
+loadrt debounce cfg=2
 loadrt near count=1
 loadrt abs names=abs.spindle
 loadrt lowpass names=lowpass.spindle
@@ -94,9 +95,11 @@ net x-enable     => [HMOT](CARD0).stepgen.00.enable
 
 # ---setup home / limit switch signals---
 
-net x-home-sw     =>  joint.0.home-sw-in
-net x-neg-limit     =>  joint.0.neg-lim-sw-in
-net x-pos-limit     =>  joint.0.pos-lim-sw-in
+net in-home-x <= hm2_7i96s.0.gpio.034.in_not
+net in-home-x => debounce.0.1.in
+net out-home-x <=	debounce.0.1.out
+net out-home-x =>	joint.0.home-sw-in
+net out-home-x =>	joint.0.pos-lim-sw-in
 
 #*******************
 #  AXIS Z JOINT 1
@@ -159,6 +162,8 @@ net in-home-z => debounce.0.0.in
 net out-home-z <=	debounce.0.0.out
 net out-home-z =>	joint.1.home-sw-in
 net out-home-z =>	joint.1.pos-lim-sw-in
+
+
 #*******************
 #  SPINDLE
 #*******************

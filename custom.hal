@@ -5,6 +5,7 @@ loadrt conv_float_s32 count=1
 loadrt message names=oillow messages="Low oil level Bijur Pump Spirax HD90 or Vectra #2"
 loadrt mux8 count=1
 loadrt mux4 count=1 
+loadrt mux_generic config="ss32"
 
 net machine-is-on => hm2_7i96s.0.outm.00.out-04
 
@@ -32,15 +33,21 @@ setp ilowpass.Z.gain 0.01
 net handwheel-x ilowpass.X.in <= hm2_7i96s.0.7i73.0.0.enc1.count
 net encX-count <= ilowpass.X.out
 net encX-count axis.x.jog-counts
+net encX-count joint.0.jog-counts
+setp joint.0.jog-enable 1
 setp axis.x.jog-enable 1
 setp axis.x.jog-scale 0.01
+setp joint.0.jog-scale 0.01
 
 #net handwheel-z axis.z.jog-counts <= hm2_7i96s.0.7i73.0.0.enc0.count
 net handwheel-z ilowpass.Z.in <= hm2_7i96s.0.7i73.0.0.enc0.count
 net encZ-count <= ilowpass.Z.out
 net encZ-count axis.z.jog-counts
+net encZ-count joint.1.jog-counts
+setp joint.1.jog-enable 1
 setp axis.z.jog-enable 1
 setp axis.z.jog-scale 0.01
+setp joint.1.jog-scale 0.01
 
 #Choix de l'increment
 addf conv-float-s32.0 servo-thread
@@ -62,6 +69,55 @@ setp mux8.0.in6 110
 setp mux8.0.in7 120
 net mux80conv conv-float-s32.0.in <= mux8.0.out
 net feedoverrridebutton halui.spindle.0.override.counts <= conv-float-s32.0.out
+
+addf mux-gen.00 servo-thread
+net muxgen00b00 pipco.din.21 => mux-gen.00.sel-bit-00
+net muxgen00b01 pipco.din.22 => mux-gen.00.sel-bit-01
+net muxgen00b02 pipco.din.26 => mux-gen.00.sel-bit-02
+net muxgen00b03 pipco.din.27 => mux-gen.00.sel-bit-03
+net muxgen00b04 pipco.din.28 => mux-gen.00.sel-bit-04
+
+#feed override
+setp mux-gen.00.in-s32-00 110
+setp mux-gen.00.in-s32-01 100
+setp mux-gen.00.in-s32-02 120
+setp mux-gen.00.in-s32-07 0
+setp mux-gen.00.in-s32-04 4
+setp mux-gen.00.in-s32-06 2
+setp mux-gen.00.in-s32-05 10 
+setp mux-gen.00.in-s32-16 80
+setp mux-gen.00.in-s32-17 90
+setp mux-gen.00.in-s32-18 70
+setp mux-gen.00.in-s32-19 60
+setp mux-gen.00.in-s32-20 30
+setp mux-gen.00.in-s32-21 20
+setp mux-gen.00.in-s32-22 40
+setp mux-gen.00.in-s32-23 50
+
+#jogoverride
+setp mux-gen.00.in-s32-12 100
+setp mux-gen.00.in-s32-13 1000
+setp mux-gen.00.in-s32-14 10
+setp mux-gen.00.in-s32-15 1
+setp mux-gen.00.in-s32-29 10000
+
+#handwhel
+setp mux-gen.00.in-s32-28 1
+setp mux-gen.00.in-s32-30 10
+setp mux-gen.00.in-s32-31 100
+
+#not used
+#setp mux-gen.00.in-s32-03 3
+#setp mux-gen.00.in-s32-08 8 
+#setp mux-gen.00.in-s32-09 9
+#setp mux-gen.00.in-s32-10 10
+#setp mux-gen.00.in-s32-11 11
+#setp mux-gen.00.in-s32-24 24
+#setp mux-gen.00.in-s32-25 25
+#setp mux-gen.00.in-s32-26 26
+#setp mux-gen.00.in-s32-27 27
+
+
  
 addf mux4.0 servo-thread  
 #input 20 vers P1 pin15
