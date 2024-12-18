@@ -1,6 +1,6 @@
 # Halshow settings
 # This file is generated automatically.
-wm geometry . 1920x962+0+31
+wm geometry . 1920x962+-10+31
 placeFrames 0.4531886024423338
 set ::ratio 0.4531886024423338
 set ::old_w_leftf 160
@@ -54,6 +54,113 @@ set ::watchlist {
     pin+hm2_7i96s.0.gpio.034.in_not
     pin+hm2_7i96s.0.inm.00.input-00
     pin+hm2_7i96s.0.gpio.035.in
+    sig+in-home-x
+    sig+x-index-enable
+    pin+hm2_7i96s.0.gpio.038.in_not
+    pin+joint.0.neg-lim-sw-in
+    pin+hm2_7i96s.0.gpio.037.in_not
+    pin+joint.0.pos-lim-sw-in
+    pin+hm2_7i96s.0.inm.00.input-00-slow
+    pin+axis.x.jog-enable
+    pin+axis.x.jog-scale
+    pin+axis.z.jog-scale
+    pin+mux-gen.02.sel-bit-00
+    pin+mux-gen.02.sel-bit-01
+    pin+mux-gen.02.sel-bit-03
+    pin+mux-gen.02.sel-bit-02
+    pin+mux-gen.02.sel-bit-04
+    pin+conv-s32-float.0.in
+    pin+conv-s32-float.0.out
+    pin+mux-gen.02.out-float
+    pin+pipco.keypad.01
+    pin+pipco.keypad.02
+    pin+pipco.keypad.03
+    pin+pipco.keypad.04
+    pin+pipco.keypad.05
+    pin+pipco.keypad.06
+    pin+pipco.keypad.07
+    pin+pipco.keypad.08
+    pin+pipco.keypad.09
+    pin+pipco.keypad.10
+    pin+pipco.keypad.11
+    pin+pipco.keypad.12
+    pin+pipco.keypad.13
+    pin+pipco.keypad.14
+    pin+pipco.keypad.15
+    pin+pipco.keypad.16
+    pin+pipco.keypad.17
+    pin+pipco.keypad.18
+    pin+pipco.keypad.19
+    pin+pipco.keypad.20
+    pin+pipco.keypad.21
+    pin+pipco.keypad.22
+    pin+pipco.keypad.23
+    pin+pipco.keypad.24
+    pin+pipco.keypad.25
+    pin+pipco.keypad.26
+    pin+pipco.keypad.27
+    pin+pipco.keypad.28
+    pin+pipco.keypad.29
+    pin+pipco.keypad.30
+    pin+pipco.keypad.31
+    pin+pipco.keypad.32
+    pin+pipco.keypad.33
+    pin+pipco.keypad.34
+    pin+pipco.keypad.35
+    pin+pipco.keypad.36
+    pin+pipco.keypad.37
+    pin+pipco.keypad.38
+    pin+pipco.keypad.39
+    pin+pipco.keypad.40
+    pin+pipco.keypad.41
+    pin+pipco.keypad.42
+    pin+pipco.keypad.43
+    pin+pipco.keypad.44
+    pin+pipco.keypad.45
+    pin+pipco.keypad.46
+    pin+pipco.keypad.47
+    pin+pipco.keypad.48
+    pin+pipco.keypad.49
+    pin+pipco.keypad.50
+    pin+pipco.keypad.51
+    pin+pipco.keypad.52
+    pin+pipco.keypad.53
+    pin+pipco.keypad.54
+    pin+pipco.keypad.55
+    pin+pipco.keypad.56
+    pin+pipco.keypad.57
+    pin+pipco.keypad.58
+    pin+pipco.keypad.59
+    pin+pipco.keypad.60
+    pin+pipco.keypad.61
+    pin+pipco.keypad.62
+    pin+pipco.keypad.63
+    pin+pipco.keypad.64
+    pin+pipco.keypad.65
+    pin+pipco.keypad.66
+    pin+pipco.keypad.67
+    pin+pipco.keypad.68
+    pin+pipco.keypad.69
+    pin+pipco.keypad.70
+    pin+pipco.keypad.71
+    pin+pipco.keypad.72
+    pin+pipco.keypad.73
+    pin+pipco.keypad.74
+    pin+pipco.keypad.75
+    pin+pipco.keypad.76
+    pin+pipco.keypad.77
+    pin+pipco.keypad.78
+    pin+pipco.keypad.79
+    pin+pipco.keypad.80
+    pin+pipco.keypad.81
+    pin+pipco.keypad.82
+    pin+pipco.keypad.83
+    pin+pipco.keypad.84
+    pin+pipco.keypad.85
+    pin+pipco.keypad.86
+    pin+pipco.keypad.87
+    pin+pipco.keypad.88
+    pin+halui.axis.z.plus
 }
 set ::workmode watchhal
 set ::watchInterval 100
