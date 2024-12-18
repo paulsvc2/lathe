@@ -2,7 +2,6 @@
 # This file will not be overwritten when you run PNCconf again
 
 loadrt conv_float_s32 count=1
-loadrt conv_s32_float count=1
 loadrt message names=oillow messages="Low oil level Bijur Pump Spirax HD90 or Vectra #2"
 loadrt mux8 count=1
 loadrt mux4 count=1 
@@ -125,10 +124,7 @@ setp mux-gen.02.in-float-28 1.0
 setp mux-gen.02.in-float-30 10.0
 setp mux-gen.02.in-float-31 100.0
 
-#net muxgen02conv conv-s32-float.0.in <= mux-gen.02.out-s32
-
 net handwheel-scale <= mux-gen.02.out-float
-#net handwheel-scale <= conv-s32-float.0.out
 net handwheel-scale => axis.x.jog-scale
 net handwheel-scale => axis.z.jog-scale
 
