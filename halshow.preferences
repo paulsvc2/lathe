@@ -1,6 +1,6 @@
 # Halshow settings
 # This file is generated automatically.
-wm geometry . 1920x962+-10+31
+wm geometry . 904x962+912+31
 placeFrames 0.4531886024423338
 set ::ratio 0.4531886024423338
 set ::old_w_leftf 160
@@ -69,8 +69,6 @@ set ::watchlist {
     pin+mux-gen.02.sel-bit-03
     pin+mux-gen.02.sel-bit-02
     pin+mux-gen.02.sel-bit-04
-    pin+conv-s32-float.0.in
-    pin+conv-s32-float.0.out
     pin+mux-gen.02.out-float
     pin+pipco.keypad.01
     pin+pipco.keypad.02
@@ -161,6 +159,33 @@ set ::watchlist {
     pin+pipco.keypad.87
     pin+pipco.keypad.88
     pin+halui.axis.z.plus
+    pin+halui.joint.1.plus
+    pin+halui.joint.1.is-selected
+    pin+halui.joint.1.is-homed
+    pin+halui.joint.1.minus
+    pin+halui.axis.z.select
+    pin+halui.axis.z.increment
+    pin+halui.axis.z.increment-plus
+    pin+halui.axis.z.increment-minus
+    pin+halui.axis.z.minus
+    pin+halui.axis.z.pos-commanded
+    pin+halui.axis.z.pos-relative
+    pin+joint.0.homed
+    pin+joint.0.jog-scale
+    pin+joint.1.homed
+    pin+axis.z.jog-enable
+    pin+joint.0.jog-enable
+    pin+joint.1.jog-enable
+    pin+hm2_7i96s.0.7i73.0.0.input-00
+    pin+hm2_7i96s.0.7i73.0.0.input-01
+    pin+hm2_7i96s.0.7i73.0.0.input-00-not
+    pin+hm2_7i96s.0.7i73.0.0.input-01-not
+    pin+hm2_7i96s.0.7i73.0.0.input-17
+    pin+hm2_7i96s.0.7i73.0.0.input-17-not
+    pin+hm2_7i96s.0.7i73.0.0.input-16
+    pin+hm2_7i96s.0.7i73.0.0.input-16-not
+    pin+hm2_7i96s.0.7i73.0.0.input-18
+    pin+hm2_7i96s.0.7i73.0.0.input-18-not
 }
 set ::workmode watchhal
 set ::watchInterval 100

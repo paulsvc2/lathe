@@ -6,7 +6,9 @@ loadrt message names=oillow messages="Low oil level Bijur Pump Spirax HD90 or Ve
 loadrt mux8 count=1
 loadrt mux4 count=1 
 loadrt mux_generic config="ss32,ss32,ff32"
-
+#loadrt scale names=scale.x
+addf scale.x servo-thread
+setp scale.x.gain -1
 net machine-is-on => hm2_7i96s.0.outm.00.out-04
 
 addf oillow servo-thread
@@ -36,8 +38,8 @@ net encX-count axis.x.jog-counts
 net encX-count joint.0.jog-counts
 setp joint.0.jog-enable 1
 setp axis.x.jog-enable 1
-setp axis.x.jog-scale 0.01
-setp joint.0.jog-scale 0.01
+#setp axis.x.jog-scale 0.01
+#setp joint.0.jog-scale 0.01
 
 #net handwheel-z axis.z.jog-counts <= hm2_7i96s.0.7i73.0.0.enc0.count
 net handwheel-z ilowpass.Z.in <= hm2_7i96s.0.7i73.0.0.enc0.count
@@ -46,8 +48,8 @@ net encZ-count axis.z.jog-counts
 net encZ-count joint.1.jog-counts
 setp joint.1.jog-enable 1
 setp axis.z.jog-enable 1
-setp axis.z.jog-scale 0.01
-setp joint.1.jog-scale 0.01
+#setp axis.z.jog-scale 0.01
+#setp joint.1.jog-scale 0.01
 
 #Choix de l'increment
 addf conv-float-s32.0 servo-thread
@@ -120,13 +122,21 @@ net muxgen00b03 pipco.din.27 => mux-gen.02.sel-bit-03
 net muxgen00b04 pipco.din.28 => mux-gen.02.sel-bit-04
 
 #handwheel
-setp mux-gen.02.in-float-28 1.0
-setp mux-gen.02.in-float-30 10.0
-setp mux-gen.02.in-float-31 100.0
+setp mux-gen.02.in-float-28 0.01
+setp mux-gen.02.in-float-30 0.1
+setp mux-gen.02.in-float-31 1.0
 
 net handwheel-scale <= mux-gen.02.out-float
-net handwheel-scale => axis.x.jog-scale
+
 net handwheel-scale => axis.z.jog-scale
+net handwheel-scale => joint.1.jog-scale
+#net handwheel-scale => axis.x.jog-scale
+#net handwheel-scale => joint.0.jog-scale
+net handwheel-scale scale.x.in
+net handwheel-scale-inverted scale.x.out 
+net handwheel-scale-inverted => joint.0.jog-scale
+net handwheel-scale-inverted => axis.x.jog-scale
+
 
 #not used
 #setp mux-gen.00.in-s32-03 3
