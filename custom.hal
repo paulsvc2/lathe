@@ -5,7 +5,7 @@ loadrt conv_float_s32 count=1
 loadrt message names=oillow messages="Low oil level Bijur Pump Spirax HD90 or Vectra #2"
 loadrt mux8 count=1
 loadrt mux4 count=1 
-loadrt mux_generic config="ss32,ss32,ff32"
+loadrt mux_generic config="ss32,ff32,ff32"
 #loadrt scale names=scale.x
 addf scale.x servo-thread
 setp scale.x.gain -1
@@ -107,12 +107,13 @@ net muxgen00b03 pipco.din.27 => mux-gen.01.sel-bit-03
 net muxgen00b04 pipco.din.28 => mux-gen.01.sel-bit-04
 
 #jogoverride
-setp mux-gen.00.in-s32-12 100
-setp mux-gen.00.in-s32-13 1000
-setp mux-gen.00.in-s32-14 10
-setp mux-gen.00.in-s32-15 1
-setp mux-gen.00.in-s32-29 10000
+setp mux-gen.01.in-float-12 100.0
+setp mux-gen.01.in-float-13 1000.0
+setp mux-gen.01.in-float-14 10.0
+setp mux-gen.01.in-float-15 1.0
+setp mux-gen.01.in-float-29 10000.0
 
+net panel-joint-jogspeed halui.joint.jog-speed <= mux-gen.01.out-float
 
 addf mux-gen.02 servo-thread
 net muxgen00b00 pipco.din.21 => mux-gen.02.sel-bit-00
@@ -149,6 +150,17 @@ net handwheel-scale-inverted => axis.x.jog-scale
 #setp mux-gen.00.in-s32-26 26
 #setp mux-gen.00.in-s32-27 27
 
+#keypad
+#Z 
+net KP-Z-plus pipco.keypad.14 =>	halui.joint.1.plus
+net KP-Z-minus pipco.keypad.12 =>	halui.joint.1.minus
 
+#X
+net KP-X-plus pipco.keypad.16 =>	halui.joint.0.plus
+net KP-X-minus pipco.keypad.10 =>	halui.joint.0.minus
 
+#FastJOG
+#net KP-fast-jog pipco.keypad.13 => panel-joint-jogspeed 10000
 
+#Facing
+net KP-facing-op1 pipco.keypad.35 => halui.mdi-command-00

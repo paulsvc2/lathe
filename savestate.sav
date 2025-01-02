@@ -30,7 +30,7 @@
 	bore.cut = 1.0
 	radius.z = 3.0
 	drill.feed = 0.05
-	turn.angle = 0.0
+	turn.angle = 5.0
 	drill.sf = 100.0
 	thread.sf = 20.0
 	drill.coolant = False
@@ -53,7 +53,7 @@
 	turn.x = 15.0
 	radius.fo = False
 	radius.coolant = False
-	turn.z = 0.0
+	turn.z = 10.0
 	chamfer.x = 0.0
 	turn.rad = 0.0
 	chamfer.z = 0.0
@@ -68,4 +68,4 @@
 	radius.bo = False
 	chamfer.fo = False
 	groove.feed = 0.03
-# last update  by gladevcp.persistence.save_state() on Thu Dec 19 12:38:00 2024 
+# last update  by gladevcp.persistence.save_state() on Thu Jan  2 20:30:17 2025 
