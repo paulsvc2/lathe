@@ -96,6 +96,9 @@ set ::watchlist {
     pin+pipco.keypad.88
     pin+halui.joint.1.is-homed
     pin+halui.joint.0.is-homed
+    pin+mux-gen.00.out-s32
+    pin+halui.feed-override.counts
+    pin+halui.feed-override.count-enable
 }
 set ::workmode watchhal
 set ::watchInterval 100

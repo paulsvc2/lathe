@@ -1,0 +1,16 @@
+;Homing
+O<homing> sub
+#M12
+M10 (Radius)
+M10 (Length)
+M10 (Mass/kg;mass);
+M11 (Enter Parameters)
+(DEBUG, _radius = #<_radius>)
+(DEBUG, _length = #<_length>)
+(DEBUG, _mass= #<_mass>)
+M2
+G53 G0 X0 Z0
+G53 G0 X#<_radius> Z-20
+G53 G0 X0 Z0
+O<homing> endsub
+
