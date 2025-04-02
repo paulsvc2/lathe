@@ -1,0 +1,33 @@
+; Définir les valeurs fixes
+#100 = 58   ; Diamètre initial (ex: 50 mm)
+#101 = 0.5  ; Profondeur de passe (ex: 0.5 mm)
+#102 = 10   ; Longueur de la pièce à usiner (ex: 10 mm)
+
+; Démarrer le programme
+G7;
+G21          ; Mettre en mode métrique (mm)
+G18          ; Sélectionner le plan XZ
+G90          ; Mode de positionnement absolu
+G95          ; Mode d'avance en mm par tour
+
+M3 S800      ; Démarrer la broche
+
+; Positionner l'outil au début de la pièce
+G0 X[#100]   ; Déplacer à la position X du diamètre initial
+G0 Z5        ; Déplacer à une position Z au-dessus de la pièce
+
+; Exécuter manuellement les passes
+; Passe 1
+G1 Z[#102 * -1] F100   ; Avancer l'outil sur la longueur Z (descendre dans la matière)
+G1 X[#100 - #101] F100   ; Réduire le diamètre
+; Passe 2
+G0 Z5        ; Remonter l'outil au-dessus de la pièce
+G0 X[#100]   ; Retourner à la position X du diamètre initial
+G1 Z[#102 * -1] F100   ; Avancer l'outil sur la longueur Z (descendre dans la matière)
+G1 X[#100 - 2 * #101] F100   ; Réduire le diamètre encore
+
+; Ajoutez autant de passes que nécessaire en répétant les lignes ci-dessus
+
+; Fin du programme
+G0 X0 Z5     ; Revenir à la position de départ au-dessus de la pièce
+M30           ; Fin du programme

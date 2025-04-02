@@ -198,7 +198,7 @@ net spindle-index-enable     <=>  hm2_7i96s.0.encoder.00.index-enable
 # ---setup spindle control signals---
 # setp hm2_7i96s.0.pwmgen.00.scale 2500
 setp   hm2_7i96s.0.pwmgen.00.scale [SPINDLE_0]MAX_OUTPUT
-# setp hm2_7i96s.0.pwmgen.00.output_type 1
+setp hm2_7i96s.0.pwmgen.00.output-type 1
 #net spindle-vel-cmd-rpm     => hm2_7i96s.0.pwmgen.00.value
 net spindle-vel-cmd-rps        <=  spindle.0.speed-out-rps
 net spindle-vel-cmd-rps-abs    <=  spindle.0.speed-out-rps-abs
@@ -225,8 +225,7 @@ net spindle-vel-fb-rps         =>  near.0.in2
 net spindle-at-speed       <=  near.0.out
 setp near.0.scale 1.000000
 setp near.0.difference 1.666667
- 
-setp lowpass.spindle.gain 1.000000
+
 net spindle-vel-fb-rpm => abs.spindle.in
 net spindle-vel-fb-rpm-abs abs.spindle.out => lowpass.spindle.in
 net spindle-vel-fb-rpm-abs-filtered lowpass.spindle.out
@@ -234,9 +233,9 @@ net spindle-output => hm2_7i96s.0.pwmgen.00.value
 
 # ---Setup spindle encoder---
 setp hm2_7i96s.0.encoder.00.scale 4000 
-# net spindle-position hm2_7i96s.0.encoder.00.position => motion.spindle-revs
-# net spindle-velocity hm2_7i96s.0.encoder.00.velocity => motion.spindle-speed-in
-# net spindle-index-enable hm2_7i96s.0.encoder.00.index-enable => motion.spindle-index-enable
+#net spindle-position hm2_7i96s.0.encoder.00.position => spindle-revs
+#net spindle-velocity hm2_7i96s.0.encoder.00.velocity => spindle.0.spindle-speed-in
+#net spindle-index-enable hm2_7i96s.0.encoder.00.index-enable => spindle-index-enable
 
 #******************************
 # connect miscellaneous signals

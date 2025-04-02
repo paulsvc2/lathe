@@ -14,7 +14,7 @@
 	chamfer.bo = True
 	groove.tool = 9.0
 	bore.tool = 1.0
-	face.feed = 0.15
+	face.feed = 0.31
 	bore.z = 0.0
 	radius.sf = 100.0
 	groove.coolant = False
@@ -63,9 +63,9 @@
 	face.x = 0.0
 	chamfer.size = 1.0
 	thread.pitch = 1.0
-	face.sf = 0.0
-	face.z = 0.0
+	face.sf = 100.0
+	face.z = 1.0
 	radius.bo = False
 	chamfer.fo = False
 	groove.feed = 0.03
-# last update  by gladevcp.persistence.save_state() on Thu Jan  9 20:42:33 2025 
+# last update  by gladevcp.persistence.save_state() on Wed Apr  2 15:20:37 2025 

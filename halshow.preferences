@@ -1,6 +1,6 @@
 # Halshow settings
 # This file is generated automatically.
-wm geometry . 904x962+206+31
+wm geometry . 904x962+218+66
 placeFrames 0.4531886024423338
 set ::ratio 0.4531886024423338
 set ::old_w_leftf 160
@@ -96,9 +96,30 @@ set ::watchlist {
     pin+pipco.keypad.88
     pin+halui.joint.1.is-homed
     pin+halui.joint.0.is-homed
-    pin+mux-gen.00.out-s32
     pin+halui.feed-override.counts
     pin+halui.feed-override.count-enable
+    pin+halui.feed-override.value
+    pin+halui.feed-override.scale
+    pin+hm2_7i96s.0.inm.00.input-05
+    pin+hm2_7i96s.0.inm.00.input-06
+    pin+hm2_7i96s.0.inm.00.input-07
+    pin+spindle.0.revs
+    param+pid.s.do-pid-calcs.tmax
+    param+pid.s.do-pid-calcs.tmax-increased
+    pin+spindle.0.speed-in
+    pin+spindle.0.speed-out-rps
+    pin+spindle.0.speed-out-rps-abs
+    pin+spindle.0.speed-out-abs
+    pin+spindle.0.speed-out
+    pin+spindle.0.at-speed
+    pin+spindle.0.speed-cmd-rps
+    pin+hm2_7i96s.0.encoder.00.input-index
+    pin+hm2_7i96s.0.encoder.00.index-enable
+    pin+hm2_7i96s.0.encoder.00.input-a
+    pin+hm2_7i96s.0.encoder.00.input-b
+    pin+spindle.0.index-enable
+    sig+spindle-index-enable
+    param+hm2_7i96s.0.pwmgen.00.output-type
 }
 set ::workmode watchhal
 set ::watchInterval 100

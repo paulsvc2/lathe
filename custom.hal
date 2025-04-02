@@ -13,8 +13,8 @@ net machine-is-on => hm2_7i96s.0.outm.00.out-04
 
 addf oillow servo-thread
 
-setp oillow.edge 1
-net no-oil hm2_7i96s.0.inm.00.input-02 oillow.trigger
+#setp oillow.edge 1
+#net no-oil hm2_7i96s.0.inm.00.input-02-not oillow.trigger
 
 #estop
 net estop-wireinput <= hm2_7i96s.0.inm.00.input-00-not
@@ -80,23 +80,24 @@ net muxgen00b03 pipco.din.27 => mux-gen.00.sel-bit-03
 net muxgen00b04 pipco.din.28 => mux-gen.00.sel-bit-04
 
 #feed override
-setp mux-gen.00.in-s32-00 1.10
-setp mux-gen.00.in-s32-01 1.00
-setp mux-gen.00.in-s32-02 1.20
+setp mux-gen.00.in-s32-00 110
+setp mux-gen.00.in-s32-01 100
+setp mux-gen.00.in-s32-02 120
 setp mux-gen.00.in-s32-07 0
-setp mux-gen.00.in-s32-04 0.04
-setp mux-gen.00.in-s32-06 0.02
-setp mux-gen.00.in-s32-05 0.10 
-setp mux-gen.00.in-s32-16 0.80
-setp mux-gen.00.in-s32-17 0.90
-setp mux-gen.00.in-s32-18 0.70
-setp mux-gen.00.in-s32-19 0.60
-setp mux-gen.00.in-s32-20 0.30
-setp mux-gen.00.in-s32-21 0.20
-setp mux-gen.00.in-s32-22 0.40
-setp mux-gen.00.in-s32-23 0.50
+setp mux-gen.00.in-s32-04 4
+setp mux-gen.00.in-s32-06 2
+setp mux-gen.00.in-s32-05 10 
+setp mux-gen.00.in-s32-16 80
+setp mux-gen.00.in-s32-17 90
+setp mux-gen.00.in-s32-18 70
+setp mux-gen.00.in-s32-19 60
+setp mux-gen.00.in-s32-20 30
+setp mux-gen.00.in-s32-21 20
+setp mux-gen.00.in-s32-22 40
+setp mux-gen.00.in-s32-23 50
 setp halui.feed-override.count-enable true
 setp halui.feed-override.direct-value true
+setp halui.feed-override.scale 0.01 
 net feedoverrridebutton halui.feed-override.counts <= mux-gen.00.out-s32
 
 addf mux-gen.01 servo-thread
