@@ -6,10 +6,10 @@ loadrt message names=oillow messages="Low oil level Bijur Pump Spirax HD90 or Ve
 loadrt mux8 count=1
 loadrt mux4 count=1 
 loadrt mux_generic config="ss32,ff32,ff32"
-#loadrt scale names=scale.x
 addf scale.x servo-thread
-setp scale.x.gain -1
+setp scale.x.gain -0.5
 net machine-is-on => hm2_7i96s.0.outm.00.out-04
+
 
 addf oillow servo-thread
 
@@ -38,8 +38,8 @@ net encX-count axis.x.jog-counts
 net encX-count joint.0.jog-counts
 setp joint.0.jog-enable 1
 setp axis.x.jog-enable 1
-#setp axis.x.jog-scale 0.01
-#setp joint.0.jog-scale 0.01
+#setp axis.x.jog-scale -0.005
+#setp joint.0.jog-scale -0.005
 
 #net handwheel-z axis.z.jog-counts <= hm2_7i96s.0.7i73.0.0.enc0.count
 net handwheel-z ilowpass.Z.in <= hm2_7i96s.0.7i73.0.0.enc0.count
@@ -132,8 +132,6 @@ net handwheel-scale <= mux-gen.02.out-float
 
 net handwheel-scale => axis.z.jog-scale
 net handwheel-scale => joint.1.jog-scale
-#net handwheel-scale => axis.x.jog-scale
-#net handwheel-scale => joint.0.jog-scale
 net handwheel-scale scale.x.in
 net handwheel-scale-inverted scale.x.out 
 net handwheel-scale-inverted => joint.0.jog-scale

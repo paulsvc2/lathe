@@ -1,6 +1,6 @@
 ; Définir les valeurs fixes
-#100 = 58   ; Diamètre initial (ex: 50 mm)
-#101 = 0.5  ; Profondeur de passe (ex: 0.5 mm)
+#100 = 55.02   ; Diamètre initial (ex: 50 mm)
+#101 = 0.2  ; Profondeur de passe (ex: 0.5 mm)
 #102 = 10   ; Longueur de la pièce à usiner (ex: 10 mm)
 
 ; Démarrer le programme
